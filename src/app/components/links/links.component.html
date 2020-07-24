@@ -1,0 +1,15 @@
+<div class="link-container">
+    <div class="link-section" *ngFor="let section of getSections()"> {{section}}:
+        <div *ngFor=" let link of links" >
+            <div class="link-list" *ngIf="link.section == section"> 
+                <div class="link">
+                    <div class="link-lines"><div class="link-title">Organisation: &nbsp;</div>{{link.linkName}}</div>
+                    <div class="link-lines"><div class="link-title">Description: &nbsp;</div>{{link.linkDescriptiom}}</div>
+                    <div class="link-lines link-title">Url: &nbsp;
+                        <a class="link-url" href={{link.linkUrl>{{link.linkUrl}} </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

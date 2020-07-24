@@ -1,0 +1,8 @@
+<div>
+    <app-tab-bar class="tab-bar"></app-tab-bar>
+    <app-home *ngIf="isCorrectTab('home')"></app-home>
+    <app-facts *ngIf="isCorrectTab('facts')"></app-facts>
+    <app-habitat *ngIf="isCorrectTab('habitat')"></app-habitat>
+    <app-links *ngIf="isCorrectTab('links')"></app-links>
+</div>
+

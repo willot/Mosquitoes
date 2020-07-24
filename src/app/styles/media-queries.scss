@@ -1,0 +1,41 @@
+@mixin smallerThanDesktop {
+    @media only screen and (max-width: 991px) {
+      @content;
+    }
+  }
+  
+  @mixin largerThanMobile {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin landscape {
+    @media only screen and (min-width: 576px) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @mixin desktop1100 {
+    @media only screen and (min-width: 1100px) {
+      @content;
+    }
+  }
+  
+  @mixin largeDesktop {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }

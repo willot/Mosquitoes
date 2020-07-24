@@ -1,0 +1,42 @@
+.link-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #E3E6DA;
+    border-radius: 4px;
+    padding:10px 0px 5px 0px;
+
+    .link-section {
+        font-size: 22px;
+        font-weight: 600;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        
+
+        .link-list{
+            font-size: 19px;
+            font-weight: 400;
+            padding-bottom: 8px;
+            padding-top: 8px;
+            display: flex;
+            flex-direction: column;
+
+            .link-lines {
+                display: flex;
+                color:black;
+            }
+            .link-title{
+                font-weight: 600;
+                color: #49654C;;
+            }
+            .link-url {
+                word-break: break-all;
+                font-weight: 400;
+            }
+            }
+    }
+
+}
+
+
+    
