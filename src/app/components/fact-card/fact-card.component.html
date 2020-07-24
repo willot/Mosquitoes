@@ -1,9 +1,8 @@
-<div class="card" [ngStyle]="{'background-color':determineBackGroundColor(), 'color':determineFontColor()}">
-    <h1 class="title">{{card.title}}</h1>
-
+<div class="card" >
     <div class="container">
-        <img class="image" src={{card.image}} alt={{card.imageAltText}}>
-        <div class="text-container">
+        <img class="image" src={{card.image}} [ngClass]="{'order-1':positionLeft() == true,'order-2':positionLeft() == false }" alt={{card.imageAltText}}>
+        <div class="text-container" [ngClass]="{'order-1':positionLeft() == false,'order-2':positionLeft() == true }">
+            <h1 class="title">{{card.title}}</h1>
             <div class="text">{{card.text1}}</div>
             <div class="text">{{card.text2}}</div>
             <div class="text">{{card.text3}}</div>

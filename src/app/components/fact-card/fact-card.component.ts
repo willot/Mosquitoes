@@ -19,10 +19,7 @@ export class FactCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  determineBackGroundColor(): string {
-    return this.index%2 == 0 ? '#E3E6DA': '#253628';
-  }
-  determineFontColor(): string {
-    return this.index%2 == 0 ? '#253628' :'#E3E6DA';
+  positionLeft(): boolean {
+    return this.index%2 == 0 ? true: false;
   }
 }
