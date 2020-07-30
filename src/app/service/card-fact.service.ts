@@ -14,7 +14,7 @@ export class CardFactService {
 
    generateCardFacts() {
     const firstCard = getEmptyCardFact();
-    firstCard.title = 'Only female bite';
+    firstCard.title = 'Only female mosquitoes bite';
     firstCard.image = '../assets/images/Mosquito_gender_en.svg';
     firstCard.imageAltText = 'male vs female mosquitoes';
     firstCard.text1 = 'Only the female mosquitoes bite, they use the blood as their energy source to produce eggs.';

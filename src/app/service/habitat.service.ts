@@ -106,8 +106,8 @@ export class HabitatService {
     const dirtyPoolHabitat = getEmptyHabitat();
     dirtyPoolHabitat.topPositionRatio = 0.91;
     dirtyPoolHabitat.leftPositionRatio = 0.79;
-    dirtyPoolHabitat.heightRatio = 0.089;
-    dirtyPoolHabitat.widthRatio = 0.21;
+    dirtyPoolHabitat.heightRatio = 0.085;
+    dirtyPoolHabitat.widthRatio = 0.19;
     dirtyPoolHabitat.image = '../assets/images/pool-dirty.jpg';
     dirtyPoolHabitat.title = 'Unmaintained pool can be a major mosquitoe reservoir.';
     dirtyPoolHabitat.description = 'Dirty/unmaintained pool can become a massive breeding ground for mosquitoes producing thousand of them.';

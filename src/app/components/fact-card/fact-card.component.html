@@ -1,5 +1,5 @@
 <div class="card" >
-    <div class="container">
+    <div [ngClass]="{'container-left':positionLeft() == true,'container-right':positionLeft() == false }">
         <img class="image" src={{card.image}} [ngClass]="{'order-1':positionLeft() == true,'order-2':positionLeft() == false }" alt={{card.imageAltText}}>
         <div class="text-container" [ngClass]="{'order-1':positionLeft() == false,'order-2':positionLeft() == true }">
             <h1 class="title">{{card.title}}</h1>
