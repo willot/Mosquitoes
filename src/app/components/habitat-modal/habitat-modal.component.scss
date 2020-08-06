@@ -1,63 +1,99 @@
-.modal-container {
-position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+@import '../../styles/media-queries.scss';
+  
+  .modal-container {
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
 
-  .modal-content {
-    background-color: #EBEBE9;
-    margin: 30% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    color: #253628;
-    width: 80%; /* Could be more or less, depending on screen size */
+    .modal-content {
+      background-color: #EBEBE9;
+      margin: 20% auto; /* 10% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      color: #253628;
+      width: 80%; /* Could be more or less, depending on screen size */
 
-    .modal-header {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 10px;
+      .modal-header {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 10px;
 
-        .close {
-            padding-bottom: 10px;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        .close:active {
-          transform: scale(0.95,0.95);
-          transition-duration: 0.2s;
-        }
+          .close {
+              padding-bottom: 10px;
+              font-size: 45px;
+              cursor: pointer;
+          }
+          .close:active {
+            transform: scale(0.95,0.95);
+            transition-duration: 0.2s;
+          }
 
-        .title {
-          font-family: Lato;
-        }
-    }
+          .title {
+            font-family: Lato;
+            font-size: 22px;
+            margin-bottom: 0px;
+          }
+      }
 
-    .modal-description {
-        display: flex;
-        justify-content: flex-start;
-        font-size: 20px;
+      .modal-description {
+          display: flex;
+          justify-content: flex-start;
+          font-size: 20px;
+          flex-direction: column;
 
-        .modal-image {
-            max-height: 200px;
-            max-width: 200px;
-            padding-right: 20px;
-        }
+          .modal-image {
+              max-height: 250px;
+              object-fit: cover;
+              padding-bottom: 10px;;
+          }
 
-        .description {
-          padding-bottom: 15px;
-        }
-        .recommendations-title {
-          font-weight: 600;
-        }
+          .description {
+            padding-bottom: 15px;
+          }
+          .recommendations-title {
+            font-weight: 800;
+          }
+      }
     }
   }
 
-  
+  @include landscape {
+    
+    .modal-container {
+      overflow-y: hidden;
+    
+    .title {
+      font-size: 32px !important;
+    }
 
+    .modal-description {
+      display: grid !important;
+      grid-template-columns: minmax(200px, 25%) 1fr !important;
+      font-size:16px !important;
+
+      .modal-image {
+        max-width: 100% !important;
+        height: auto;
+        max-height: none !important;
+        padding-right: 20px;
+        object-fit: cover !important;
+        text-align: center;
+      }
+    }
+
+    .description {
+      padding-left: 10px;
+      font-size: 22px;
+      padding-bottom: 15px;
+    }
+  }
+   
 }
 

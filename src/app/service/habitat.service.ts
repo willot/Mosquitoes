@@ -50,7 +50,7 @@ export class HabitatService {
     tireHabitat.widthRatio = 0.074;
     tireHabitat.image = '../assets/images/tire.jpg';
     tireHabitat.title = 'Tires store outside are a perfect place for rain water to seat for days.';
-    tireHabitat.description = 'If water form puddle inside the tires mosquitoes will use you it and breed.';
+    tireHabitat.description = 'When water accumulate inside the tires mosquitoes use you it to breed and lay their eggs.';
     tireHabitat.recommendations = 'Tires should get discarded and not store outside. '
     + 'If they are part of the landscape make holes inside them so they can drain.';
     this.habitatInfos.push(tireHabitat);
@@ -63,7 +63,7 @@ export class HabitatService {
     leakHabitat.image = '../assets/images/hose.jpg';
     leakHabitat.title = 'Leaky faucet create puddle perfect for mosquitoes.';
     leakHabitat.description = 'Leaky faucet create permanent small puddle that mosquitoes use to lay their eggs.';
-    leakHabitat.recommendations = 'Fixing a leaky faucet will remove potential breeding ground '
+    leakHabitat.recommendations = 'Fixing a leaky faucet will remove potential breeding ground and save water.'
     + 'and also save water!';
     this.habitatInfos.push(leakHabitat);
 
@@ -73,7 +73,7 @@ export class HabitatService {
     bowlHabitat.heightRatio = 0.089;
     bowlHabitat.widthRatio = 0.125;
     bowlHabitat.image = '../assets/images/pet-bowl.jpg';
-    bowlHabitat.title = 'outside water bowl for pets are also a potential breeding ground.';
+    bowlHabitat.title = 'Outside water bowl for pets are also a potential breeding ground.';
     bowlHabitat.description = 'Water bowl for pets can stay outside for days and get refill by rain.';
     bowlHabitat.recommendations = 'Flip bowl upside-down when they are not in use and store them inside.'
     this.habitatInfos.push(bowlHabitat);
@@ -84,7 +84,7 @@ export class HabitatService {
     birdBathHabitat.heightRatio = 0.194;
     birdBathHabitat.widthRatio = 0.139;
     birdBathHabitat.image = '../assets/images/bird-bath.jpg';
-    birdBathHabitat.title = 'Bird baths and pot saucer are perfect ground for mosquitoes to breed.';
+    birdBathHabitat.title = 'Bird baths and pot saucers are perfect ground for mosquitoes to breed.';
     birdBathHabitat.description = 'Water in bird bath can stay standing for multiple days. It is the same for pot saucer '
     + 'that harbor standing water for days. These are a perfect environment for mosquitoes.';
     birdBathHabitat.recommendations = 'Empty the bird bath every 2-3 days and replace the water with fresh one.' 
@@ -98,8 +98,8 @@ export class HabitatService {
     pondHabitat.widthRatio = 0.143;
     pondHabitat.image = '../assets/images/pond-2.jpg';
     pondHabitat.title = 'Ponds are not always a mosquitoe breeding ground.';
-    pondHabitat.description = 'Ponds are usually a problem if they do not contain fish or other animal that eat insect larvaes. ' 
-    +'Bigger ponds that contain multiple animals usually regulate the insect larvae by themself.' ;
+    pondHabitat.description = 'Ponds are usually a problem if they do not contain fish or other animals that eat insect larvae. ' 
+    +'Bigger ponds that contain multiple animals usually regulate the insect larvae population by themself.' ;
     pondHabitat.recommendations = 'If the pond doesn\'t have fishes you can buy larvacide and treat your pond regularly.'
     this.habitatInfos.push(pondHabitat);
 
