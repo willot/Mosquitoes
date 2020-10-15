@@ -32,6 +32,11 @@ export class HabitatComponent implements OnInit {
     return width / 1.404;
   }
 
+  onOrientationChange() {
+    console.log('width ' + window.innerWidth);
+    console.log('height ' + window.innerWidth / 1.404);
+  }
+
   onResize() {
     // this somehow trigger determineLeft position and top position function?
     // if it is not there is doesn't work.
@@ -40,10 +45,7 @@ export class HabitatComponent implements OnInit {
   }
 
   onOpenModal(index: number) {
-    console.log(this.modalInfo)
-    console.log(index)
-    this.modalInfo = this.habitatInfos[index]
-    console.log(this.modalInfo)
+    this.modalInfo = this.habitatInfos[index];
     this.opened = true;
   }
 
