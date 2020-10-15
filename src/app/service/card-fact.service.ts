@@ -54,6 +54,15 @@ export class CardFactService {
     fourthCard.text2 = 'Other species are more generalist and feed on a wider variety of hosts.';
     fourthCard.text3 = 'Strain ressource can affect which host mosquitoes use.';
     this.cardFacts.push(fourthCard);
+
+    const fifthCard = getEmptyCardFact();
+    fifthCard.title = 'Mosquitoes lay their eggs in water';
+    fifthCard.image = '../assets/images/bird-bath.jpg';
+    fifthCard.imageAltText = 'bird';
+    fifthCard.text1 = 'Female mosquitoes lay their eggs in standing water.' ;
+    fifthCard.text2 = 'Eggs, larva and mosquito pupae develop in standing water for at least a week.';
+    fifthCard.text3 = 'Removing standing water is the best and easiest way to control mosquitoes.';
+    this.cardFacts.push(fifthCard);
    }
 
    getCardFactsData(): Array<CardFactModel> {
