@@ -18,6 +18,7 @@ export class HabitatComponent implements OnInit {
 
   ngOnInit(): void {
     this.habitatInfos = this.habitatService.getHabitats();
+    this.onResize();
   }
 
   determineVerticalPosition(ratio: number): number {
@@ -41,6 +42,7 @@ export class HabitatComponent implements OnInit {
   onResize() {
     // this somehow trigger determineLeft position and top position function?
     // if it is not there is doesn't work.
+    console.log("BBBBBBBBBBB");
     console.log('width ' + window.innerWidth);
     console.log('height ' + window.innerWidth / 1.404);
   }
