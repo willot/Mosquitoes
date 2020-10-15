@@ -1,4 +1,4 @@
-<div class="image-container" (window:resize)="onResize()">
+<div class="image-container" (window:resize)="onResize()" (window:orientationchange)="onOrientationChange()">
     <img class="habitat-image"   usemap="#habitat" src="../assets/images/Backyard.svg">
     <div class="section" *ngFor=" let habitat of habitatInfos; let ind = index"
          (click)="onOpenModal(ind)"

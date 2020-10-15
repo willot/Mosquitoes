@@ -33,6 +33,7 @@ export class HabitatComponent implements OnInit {
   }
 
   onOrientationChange() {
+    console.log("AAAAAAAAAAAAAAAA");
     console.log('width ' + window.innerWidth);
     console.log('height ' + window.innerWidth / 1.404);
   }
