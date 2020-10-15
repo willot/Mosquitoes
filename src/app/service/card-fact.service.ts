@@ -14,16 +14,6 @@ export class CardFactService {
 
    generateCardFacts() {
     const firstCard = getEmptyCardFact();
-
-    const fifthCard = getEmptyCardFact();
-    fifthCard.title = 'Mosquitoes lay their eggs in water';
-    fifthCard.image = '../assets/images/bird-bath.jpg';
-    fifthCard.imageAltText = 'bird';
-    fifthCard.text1 = 'Female mosquitoes lay their eggs in standing water.' ;
-    fifthCard.text2 = 'Eggs, larva and pupae develop in standing water for at least a week';
-    fifthCard.text3 = 'Removing standing water is the best way to control mosquitoes';
-    this.cardFacts.push(fifthCard);
-
     firstCard.title = 'Only female mosquitoes bite';
     firstCard.image = '../assets/images/Mosquito_gender_en.svg';
     firstCard.imageAltText = 'male vs female mosquitoes';
@@ -32,6 +22,7 @@ export class CardFactService {
     'and males have more bushier antennas';
     firstCard.text3 = 'See image to see the different type of antennas.';
     this.cardFacts.push(firstCard);
+
 
     const secondCard = getEmptyCardFact();
     secondCard.title = 'Most mosquitoes don\'t travel far';
