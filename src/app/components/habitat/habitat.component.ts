@@ -10,6 +10,7 @@ import { HabitatModel } from 'src/app/models/HabitatModel';
 export class HabitatComponent implements OnInit {
 
   habitatInfos: HabitatModel[];
+  currentHabitat: HabitatModel[];
   modalInfo: HabitatModel;
   opened = false;
 
@@ -18,33 +19,12 @@ export class HabitatComponent implements OnInit {
 
   ngOnInit(): void {
     this.habitatInfos = this.habitatService.getHabitats();
-    this.onResize();
-  }
-
-  determineVerticalPosition(ratio: number): number {
-    return this.calculateHeightOfPicture(window.innerWidth) * ratio;
-  }
-
-  determineHorizontalPosition(ratio: number): number {
-    return window.innerWidth * ratio;
-  }
-
-  calculateHeightOfPicture(width: number): number {
-    return width / 1.404;
-  }
-
-  onOrientationChange() {
-    console.log("AAAAAAAAAAAAAAAA");
-    console.log('width ' + window.innerWidth);
-    console.log('height ' + window.innerWidth / 1.404);
+    this.currentHabitat = this.calculatePointsLocation(this.habitatInfos);
   }
 
   onResize() {
-    // this somehow trigger determineLeft position and top position function?
-    // if it is not there is doesn't work.
-    console.log("BBBBBBBBBBB");
-    console.log('width ' + window.innerWidth);
-    console.log('height ' + window.innerWidth / 1.404);
+    this.currentHabitat = this.calculatePointsLocation(this.habitatInfos);
+    console.log('BBBBBBBBBBB');
   }
 
   onOpenModal(index: number) {
@@ -54,5 +34,31 @@ export class HabitatComponent implements OnInit {
 
   onCloseModal() {
     this.opened = false;
+  }
+
+  private calculatePointsLocation(habitats: HabitatModel[] ): HabitatModel[] {
+    const currentHabitat = [];
+    for (let i = 0; i < habitats.length; i++) {
+      const newHabitat = JSON.parse(JSON.stringify(habitats[i]));
+      newHabitat.widthRatio = this.determineHorizontalPosition(newHabitat.widthRatio);
+      newHabitat.heightRatio = this.determineVerticalPosition(newHabitat.heightRatio);
+      newHabitat.leftPositionRatio = this.determineHorizontalPosition(newHabitat.leftPositionRatio);
+      newHabitat.topPositionRatio = this.determineVerticalPosition(newHabitat.topPositionRatio);
+
+      currentHabitat.push(newHabitat);
+    }
+    return currentHabitat;
+  }
+
+  private determineVerticalPosition(ratio: number): number {
+    return this.calculateHeightOfPicture(window.innerWidth) * ratio;
+  }
+
+  private determineHorizontalPosition(ratio: number): number {
+    return window.innerWidth * ratio;
+  }
+
+  private calculateHeightOfPicture(width: number): number {
+    return width / 1.404;
   }
 }

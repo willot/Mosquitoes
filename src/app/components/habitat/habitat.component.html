@@ -1,11 +1,11 @@
-<div class="image-container" (window:resize)="onResize()" (window:orientationchange)="onOrientationChange()">
+<div class="image-container" (window:resize)="onResize()">
     <img class="habitat-image"   usemap="#habitat" src="../assets/images/Backyard.svg">
-    <div class="section" *ngFor=" let habitat of habitatInfos; let ind = index"
+    <div class="section" *ngFor=" let habitat of currentHabitat; let ind = index"
          (click)="onOpenModal(ind)"
-         [ngStyle]="{'width.px': determineHorizontalPosition(habitat.widthRatio),
-          'height.px':determineVerticalPosition(habitat.heightRatio),
-          'left.px':determineHorizontalPosition(habitat.leftPositionRatio),
-          'top.px':determineVerticalPosition(habitat.topPositionRatio)}">
+         [ngStyle]="{'width.px': habitat.widthRatio,
+          'height.px': habitat.heightRatio,
+          'left.px': habitat.leftPositionRatio,
+          'top.px': habitat.topPositionRatio}">
       {{ind +1}}
     </div>
     <p class="text">Click on the different sections to learn more.</p>
