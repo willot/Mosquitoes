@@ -20,6 +20,6 @@ export class FactCardComponent implements OnInit {
   }
 
   positionLeft(): boolean {
-    return this.index%2 == 0 ? true: false;
+    return this.index % 2 === 0 ? true : false;
   }
 }

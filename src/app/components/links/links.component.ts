@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { LinkService } from 'src/app/service/link-service';
-import { LinkModel } from 'src/app/models/LinkModel';
-import { element } from 'protractor';
+import {Component, OnInit} from '@angular/core';
+import {LinkService} from 'src/app/service/link-service';
+import {LinkModel} from 'src/app/models/LinkModel';
 
 @Component({
   selector: 'app-links',

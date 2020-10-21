@@ -19,8 +19,4 @@ export class FactsComponent implements OnInit {
   generateId(title: string): string {
     return title.replace(new RegExp(' ', 'g'), '-');
   }
-
-  generateLink(title: string): string {
-    return '#' + this.generateId(title);
-  }
 }
