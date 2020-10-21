@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef, ViewContainerRef } from '@angular/core';
+import {Component, OnInit, ViewChild, TemplateRef, ViewContainerRef, AfterViewInit, AfterViewChecked} from '@angular/core';
 import { HabitatService } from 'src/app/service/habitat.service';
 import { HabitatModel } from 'src/app/models/HabitatModel';
 
@@ -7,7 +7,7 @@ import { HabitatModel } from 'src/app/models/HabitatModel';
   templateUrl: './habitat.component.html',
   styleUrls: ['./habitat.component.scss']
 })
-export class HabitatComponent implements OnInit {
+export class HabitatComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   habitatInfos: HabitatModel[];
   currentHabitat: HabitatModel[];
@@ -22,7 +22,26 @@ export class HabitatComponent implements OnInit {
     this.currentHabitat = this.calculatePointsLocation(this.habitatInfos);
   }
 
+  ngAfterViewInit() {
+    // this.currentHabitat = this.calculatePointsLocation(this.habitatInfos);
+    console.log('Afterviewinit');
+    console.log('width ' + window.innerWidth);
+    console.log('height ' + window.innerWidth / 1.404);
+  }
+
+  ngAfterViewChecked() {
+    console.log('AfterViewChecked');
+    console.log('width ' + window.innerWidth);
+    console.log('height ' + window.innerWidth / 1.404);
+  }
+
   onResize() {
+    declare var $: any;
+    const width = $(window).width();
+    console.log('JQUERY ' + width);
+
+    console.log('width ' + window.innerWidth);
+    console.log('height ' + window.innerWidth / 1.404);
     this.currentHabitat = this.calculatePointsLocation(this.habitatInfos);
     console.log('BBBBBBBBBBB');
   }
@@ -51,11 +70,18 @@ export class HabitatComponent implements OnInit {
   }
 
   private determineVerticalPosition(ratio: number): number {
-    return this.calculateHeightOfPicture(window.innerWidth) * ratio;
+    declare var $: any;
+    const width = $(window).width();
+
+    // let width1 = screen.width;
+
+    return this.calculateHeightOfPicture(width) * ratio;
   }
 
   private determineHorizontalPosition(ratio: number): number {
-    return window.innerWidth * ratio;
+    declare var $: any;
+    const width = $(window).width();
+    return width * ratio;
   }
 
   private calculateHeightOfPicture(width: number): number {

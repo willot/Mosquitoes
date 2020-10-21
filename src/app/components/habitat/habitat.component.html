@@ -1,5 +1,5 @@
 <div class="image-container" (window:resize)="onResize()">
-    <img class="habitat-image"   usemap="#habitat" src="../assets/images/Backyard.svg">
+    <img class="habitat-image"  usemap="#habitat" src="../assets/images/Backyard.svg">
     <div class="section" *ngFor=" let habitat of currentHabitat; let ind = index"
          (click)="onOpenModal(ind)"
          [ngStyle]="{'width.px': habitat.widthRatio,
