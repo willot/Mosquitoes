@@ -36,6 +36,7 @@ export class HabitatComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   onResize() {
+    // @ts-ignore
     declare var $: any;
     const width = $(window).width();
     console.log('JQUERY ' + width);
@@ -70,6 +71,7 @@ export class HabitatComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   private determineVerticalPosition(ratio: number): number {
+    // @ts-ignore
     declare var $: any;
     const width = $(window).width();
 
@@ -79,6 +81,7 @@ export class HabitatComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   private determineHorizontalPosition(ratio: number): number {
+    // @ts-ignore
     declare var $: any;
     const width = $(window).width();
     return width * ratio;
