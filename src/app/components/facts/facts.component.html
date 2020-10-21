@@ -1,1 +1,7 @@
-<app-fact-card *ngFor="let fact of listOfFacts, let ind = index"  id="{{generateId(fact.title)}}" [card]="fact" [index]="ind"></app-fact-card>
+<app-fact-card *ngFor="let fact of listOfFacts,
+ let ind = index"
+ id="{{generateId(fact.title)}}"
+ [card]="fact"
+ [index]="ind">
+</app-fact-card>
+

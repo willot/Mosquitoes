@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TabService } from 'src/app/service/tab.service';
+import {Component, OnInit} from '@angular/core';
+import {TabService} from 'src/app/service/tab.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { TabService } from 'src/app/service/tab.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private tabService: TabService) { 
+  constructor(private tabService: TabService) {
   }
 
   ngOnInit(): void {

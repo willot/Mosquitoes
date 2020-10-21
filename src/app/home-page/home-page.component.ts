@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { TabService } from '../service/tab.service';
 import { Subscription } from 'rxjs';
 
@@ -7,16 +7,16 @@ import { Subscription } from 'rxjs';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit, OnDestroy {
 
   tabStringName = 'home';
   scrolled = false;
   tabSubscription: Subscription;
 
-  constructor(tabService: TabService) { 
+  constructor(tabService: TabService) {
     tabService.tabSubject.subscribe( tab => {
       this.tabStringName = tab;
-    })
+    });
 
   }
 
