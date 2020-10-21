@@ -1,13 +1,13 @@
-import {Component, OnInit, ViewChild, TemplateRef, ViewContainerRef, AfterViewInit, AfterViewChecked} from '@angular/core';
-import { HabitatService } from 'src/app/service/habitat.service';
-import { HabitatModel } from 'src/app/models/HabitatModel';
+import {Component, OnInit} from '@angular/core';
+import {HabitatService} from 'src/app/service/habitat.service';
+import {HabitatModel} from 'src/app/models/HabitatModel';
 
 @Component({
   selector: 'app-habitat',
   templateUrl: './habitat.component.html',
   styleUrls: ['./habitat.component.scss']
 })
-export class HabitatComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class HabitatComponent implements OnInit {
 
   habitatInfos: HabitatModel[];
   currentHabitat: HabitatModel[];
@@ -22,29 +22,8 @@ export class HabitatComponent implements OnInit, AfterViewInit, AfterViewChecked
     this.currentHabitat = this.calculatePointsLocation(this.habitatInfos);
   }
 
-  ngAfterViewInit() {
-    // this.currentHabitat = this.calculatePointsLocation(this.habitatInfos);
-    console.log('Afterviewinit');
-    console.log('width ' + window.innerWidth);
-    console.log('height ' + window.innerWidth / 1.404);
-  }
-
-  ngAfterViewChecked() {
-    console.log('AfterViewChecked');
-    console.log('width ' + window.innerWidth);
-    console.log('height ' + window.innerWidth / 1.404);
-  }
-
   onResize() {
-    // @ts-ignore
-    declare var $: any;
-    const width = $(window).width();
-    console.log('JQUERY ' + width);
-
-    console.log('width ' + window.innerWidth);
-    console.log('height ' + window.innerWidth / 1.404);
     this.currentHabitat = this.calculatePointsLocation(this.habitatInfos);
-    console.log('BBBBBBBBBBB');
   }
 
   onOpenModal(index: number) {
@@ -57,34 +36,29 @@ export class HabitatComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   private calculatePointsLocation(habitats: HabitatModel[] ): HabitatModel[] {
+    // @ts-ignore
+    declare var $: any;
+    const windowWidth = $(window).width();
+
     const currentHabitat = [];
     for (let i = 0; i < habitats.length; i++) {
       const newHabitat = JSON.parse(JSON.stringify(habitats[i]));
-      newHabitat.widthRatio = this.determineHorizontalPosition(newHabitat.widthRatio);
-      newHabitat.heightRatio = this.determineVerticalPosition(newHabitat.heightRatio);
-      newHabitat.leftPositionRatio = this.determineHorizontalPosition(newHabitat.leftPositionRatio);
-      newHabitat.topPositionRatio = this.determineVerticalPosition(newHabitat.topPositionRatio);
+      newHabitat.widthRatio = this.determineHorizontalPosition(newHabitat.widthRatio, windowWidth);
+      newHabitat.heightRatio = this.determineVerticalPosition(newHabitat.heightRatio, windowWidth);
+      newHabitat.leftPositionRatio = this.determineHorizontalPosition(newHabitat.leftPositionRatio, windowWidth);
+      newHabitat.topPositionRatio = this.determineVerticalPosition(newHabitat.topPositionRatio, windowWidth);
 
       currentHabitat.push(newHabitat);
     }
     return currentHabitat;
   }
 
-  private determineVerticalPosition(ratio: number): number {
-    // @ts-ignore
-    declare var $: any;
-    const width = $(window).width();
-
-    // let width1 = screen.width;
-
-    return this.calculateHeightOfPicture(width) * ratio;
+  private determineVerticalPosition(ratio: number, windowWidth: number): number {
+    return this.calculateHeightOfPicture(windowWidth) * ratio;
   }
 
-  private determineHorizontalPosition(ratio: number): number {
-    // @ts-ignore
-    declare var $: any;
-    const width = $(window).width();
-    return width * ratio;
+  private determineHorizontalPosition(ratio: number, windowWidth: number): number {
+    return windowWidth * ratio;
   }
 
   private calculateHeightOfPicture(width: number): number {

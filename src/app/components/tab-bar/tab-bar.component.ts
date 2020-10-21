@@ -1,15 +1,13 @@
-import { Component, OnInit, Output, HostListener, ElementRef } from '@angular/core';
-import { EventEmitter } from '@angular/core';
-import { TabService } from 'src/app/service/tab.service';
-import { Subscription } from 'rxjs';
+import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
+import {TabService} from 'src/app/service/tab.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-tab-bar',
   templateUrl: './tab-bar.component.html',
   styleUrls: ['./tab-bar.component.scss']
 })
-export class TabBarComponent implements OnInit {
-
+export class TabBarComponent implements OnInit, OnDestroy {
   tabName = 'home';
   clickedOnFacts = false;
   clickedOnHabitat = false;
@@ -18,10 +16,10 @@ export class TabBarComponent implements OnInit {
   clickedOnHamburgerMenu = false;
   tabSubscription: Subscription;
 
-  constructor(private tabService: TabService, private eRef: ElementRef) { 
-    this.tabSubscription = tabService.tabSubject.subscribe(tabName =>{
+  constructor(private tabService: TabService, private eRef: ElementRef) {
+    this.tabSubscription = tabService.tabSubject.subscribe(tabName => {
       this.tabName = tabName;
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -57,22 +55,11 @@ export class TabBarComponent implements OnInit {
     }
   }
 
-  hamburgerMenuClicked(){
-    console.log("I was clicked too");
+  hamburgerMenuClicked() {
     this.clickedOnHamburgerMenu = true;
   }
 
   closeHamburgerMenu() {
     this.clickedOnHamburgerMenu = false;
   }
-
-  // @HostListener('document:click', ['$event'])
-  // clickout(event) {
-  //   if(this.eRef.nativeElement.contains(event.target)) {
-  //     console.log("inside");
-  //   } else {
-  //     // this.clickedOnHamburgerMenu = false;
-  //     console.log("outside");
-  //   }
-  // }
 }
