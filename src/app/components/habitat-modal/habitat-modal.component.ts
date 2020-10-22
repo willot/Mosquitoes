@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnDestroy} from '@angular/core';
 import { HabitatModel } from 'src/app/models/HabitatModel';
 
 @Component({
@@ -6,7 +6,7 @@ import { HabitatModel } from 'src/app/models/HabitatModel';
   templateUrl: './habitat-modal.component.html',
   styleUrls: ['./habitat-modal.component.scss']
 })
-export class HabitatModalComponent implements OnInit {
+export class HabitatModalComponent implements OnInit, OnDestroy {
 
   @Input()
   info: HabitatModel;
@@ -17,6 +17,11 @@ export class HabitatModalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    document.body.classList.add('no-scroll');
+  }
+
+  ngOnDestroy(): void {
+    document.body.classList.remove('no-scroll');
   }
 
   closeModal() {
