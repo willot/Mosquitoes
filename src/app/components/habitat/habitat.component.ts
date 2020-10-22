@@ -29,10 +29,12 @@ export class HabitatComponent implements OnInit {
   onOpenModal(index: number) {
     this.modalInfo = this.habitatInfos[index];
     this.opened = true;
+    document.body.classList.add('no-scroll');
   }
 
   onCloseModal() {
     this.opened = false;
+    document.body.classList.remove('no-scroll');
   }
 
   private calculatePointsLocation(habitats: HabitatModel[] ): HabitatModel[] {
