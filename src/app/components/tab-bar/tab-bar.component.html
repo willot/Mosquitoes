@@ -1,13 +1,13 @@
 
-<div class='tab-bar'>  
+<div class='tab-bar'>
     <div class="hamburger-icon" >
         <img *ngIf="!clickedOnHamburgerMenu" (click)="hamburgerMenuClicked()" src="../../assets/images/hamburger.png"/>
         <img class="close-hamburger" *ngIf="clickedOnHamburgerMenu" (click)="closeHamburgerMenu()" src="../../assets/images/close-icone.png"/>
     </div>
-    <div [ngClass] = "tabName == 'home' ? 'tabs tabs-clicked' : 'tabs tabs-not-clicked'" (click)='onTabClicked("home")'>Home <img [ngClass]="clickedOnHome == true ? 'insect-show' : 'insect-hide'" src="../assets/images/mosquitoe-vector.png"></div>
-    <div [ngClass] = "tabName =='habitat' ? 'tabs tabs-clicked' : 'tabs tabs-not-clicked'" (click)='onTabClicked("habitat")'>Remove Mosquitoes Habitat <img [ngClass]="clickedOnHabitat == true ? 'insect-show' : 'insect-hide'" src="../assets/images/mosquitoe-vector.png"></div>
-    <div [ngClass] = "tabName == 'facts' ? 'tabs tabs-clicked' : 'tabs tabs-not-clicked'" (click)='onTabClicked("facts")'>Interesting Facts <img [ngClass]="clickedOnFacts == true ? 'insect-show' : 'insect-hide'" src="../assets/images/mosquitoe-vector.png"></div>
-    <div [ngClass] = "tabName == 'links' ? 'tabs tabs-clicked' : 'tabs tabs-not-clicked'" (click)='onTabClicked("links")'>Ressources and Links <img [ngClass]="clickedOnLinks == true ? 'insect-show' : 'insect-hide'" src="../assets/images/mosquitoe-vector.png"></div>
+    <button [ngClass] = "tabName == 'home' ? 'tabs tabs-clicked' : 'tabs tabs-not-clicked'" (click)='onTabClicked("home")'>Home <img [ngClass]="clickedOnHome == true ? 'insect-show' : 'insect-hide'" src="../assets/images/mosquitoe-vector.png"></button>
+    <button [ngClass] = "tabName =='habitat' ? 'tabs tabs-clicked' : 'tabs tabs-not-clicked'" (click)='onTabClicked("habitat")'>Remove Mosquitoes Habitat <img [ngClass]="clickedOnHabitat == true ? 'insect-show' : 'insect-hide'" src="../assets/images/mosquitoe-vector.png"></button>
+    <button [ngClass] = "tabName == 'facts' ? 'tabs tabs-clicked' : 'tabs tabs-not-clicked'" (click)='onTabClicked("facts")'>Interesting Facts <img [ngClass]="clickedOnFacts == true ? 'insect-show' : 'insect-hide'" src="../assets/images/mosquitoe-vector.png"></button>
+    <button [ngClass] = "tabName == 'links' ? 'tabs tabs-clicked' : 'tabs tabs-not-clicked'" (click)='onTabClicked("links")'>Ressources and Links <img [ngClass]="clickedOnLinks == true ? 'insect-show' : 'insect-hide'" src="../assets/images/mosquitoe-vector.png"></button>
 </div>
 <div class="hamburger-menu" *ngIf="clickedOnHamburgerMenu == true">
     <div class="hamburger-item" (click)='onMenuTabClicked("home")'>Home</div>

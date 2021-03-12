@@ -37,13 +37,14 @@
     .action-call {
         font-family: Lato;
         padding: 10px;
-        width: 150px;
+        width: 180px;
         text-align: center;
         font-size: 24px;
         border-radius: 4px;
         background-color: #EBEBE9;
         box-shadow: 4px 4px #666;
         cursor: pointer;
+        border: none;
     }
 
     .action-call:active {
