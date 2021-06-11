@@ -1,13 +1,13 @@
 <div class="image-container" (window:resize)="onResize()">
     <img class="habitat-image"  usemap="#habitat" src="../assets/images/Backyard.svg">
-    <div class="section" *ngFor=" let habitat of currentHabitat; let ind = index"
+    <button class="section" *ngFor=" let habitat of currentHabitat; let ind = index"
          (click)="onOpenModal(ind)"
          [ngStyle]="{'width.px': habitat.widthRatio,
           'height.px': habitat.heightRatio,
           'left.px': habitat.leftPositionRatio,
           'top.px': habitat.topPositionRatio}">
       {{ind +1}}
-    </div>
+    </button>
     <p class="text">Click on the different sections to learn more.</p>
 </div>
 <app-habitat-modal *ngIf="opened" [info]="modalInfo" (close)=onCloseModal()></app-habitat-modal>

@@ -3,7 +3,7 @@
 .tab-bar{
     position: relative;
     height:60px;
-    background-color:	#49654C;
+    background-color: #49654C;
 
     .tabs{
         display:none;
@@ -70,6 +70,11 @@
         transition-duration: 0.1s;
         border-bottom: 1px solid #253628;
       }
+
+    .tabs:focus{
+        box-shadow: 0 0 1pt 3pt #EBEBE9;
+        outline: none
+    }
 
     .tabs-not-clicked:hover {
         color:  #EBEBE9;

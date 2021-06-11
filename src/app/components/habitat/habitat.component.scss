@@ -20,6 +20,12 @@
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
+
+}
+
+.section:focus{
+  box-shadow: 0 0 1pt 3pt #253628;
+  outline: none
 }
 
 .section:hover {

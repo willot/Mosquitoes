@@ -74,7 +74,7 @@ export class HabitatService {
     bowlHabitat.widthRatio = 0.125;
     bowlHabitat.image = '../assets/images/pet-bowl.jpg';
     bowlHabitat.title = 'Outside water bowl for pets are also a potential breeding ground.';
-    bowlHabitat.description = 'Water bowl for pets can stay outside for days and get refill by rain.';
+    bowlHabitat.description = 'Water bowl for pets can stay outside for days and get refilled by rain.';
     bowlHabitat.recommendations = 'Flip bowl upside-down when they are not in use and store them inside.'
     this.habitatInfos.push(bowlHabitat);
 
@@ -85,10 +85,9 @@ export class HabitatService {
     birdBathHabitat.widthRatio = 0.139;
     birdBathHabitat.image = '../assets/images/bird-bath.jpg';
     birdBathHabitat.title = 'Bird baths and pot saucers are perfect ground for mosquitoes to breed.';
-    birdBathHabitat.description = 'Water in bird bath can stay standing for multiple days. It is the same for pot saucer '
-    + 'that harbor standing water for days. These are a perfect environment for mosquitoes.';
-    birdBathHabitat.recommendations = 'Empty the bird bath every 2-3 days and replace the water with fresh one.' 
-    + 'Remove excess water from pot saucer or remove saucer and let the water drain.'
+    birdBathHabitat.description = 'Water in bird baths or pot saucers can stay standing for multiple days. These are a perfect environment for mosquitoes to lay their eggs.';
+    birdBathHabitat.recommendations = 'Empty the bird baths every 2-3 days and replace the water with fresh one.'
+    + 'Remove excess water from pot saucers or remove saucers and let the water drain.'
     this.habitatInfos.push(birdBathHabitat);
 
     const pondHabitat = getEmptyHabitat();
@@ -98,7 +97,7 @@ export class HabitatService {
     pondHabitat.widthRatio = 0.143;
     pondHabitat.image = '../assets/images/pond-2.jpg';
     pondHabitat.title = 'Ponds are not always a mosquitoe breeding ground.';
-    pondHabitat.description = 'Ponds are usually a problem if they do not contain fish or other animals that eat insect larvae. ' 
+    pondHabitat.description = 'Ponds are usually a problem if they do not contain fish or other animals that eat insect larvae. '
     +'Bigger ponds that contain multiple animals usually regulate the insect larvae population by themself.' ;
     pondHabitat.recommendations = 'If the pond doesn\'t have fishes you can buy larvacide and treat your pond regularly.'
     this.habitatInfos.push(pondHabitat);
@@ -132,7 +131,7 @@ export class HabitatService {
     toysHabitat.widthRatio = 0.12;
     toysHabitat.image = '../assets/images/toys.jpg';
     toysHabitat.title = 'Toys left outside can accumulate water.';
-    toysHabitat.description = 'Toys can stay outside for long period and can be used as a breedign ground for mosquitoes when they accumulate water from rains.';
+    toysHabitat.description = 'Toys can stay outside for long period and can be used as a breeding ground for mosquitoes when they accumulate water from rains.';
     toysHabitat.recommendations = 'Put away the toys that can accumulate water or empty them regularly.'
     this.habitatInfos.push(toysHabitat);
 

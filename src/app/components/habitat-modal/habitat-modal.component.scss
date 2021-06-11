@@ -25,13 +25,18 @@
           padding-bottom: 10px;
 
           .close {
+              border: none;
               padding-bottom: 10px;
               font-size: 45px;
               cursor: pointer;
           }
           .close:active {
-            transform: scale(0.95,0.95);
-            transition-duration: 0.2s;
+              transform: scale(0.95,0.95);
+              transition-duration: 0.2s;
+          }
+          .close:focus{
+              box-shadow: 0 0 1pt 3pt #253628;
+              outline: none
           }
 
           .title {
