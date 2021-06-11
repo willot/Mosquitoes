@@ -44,8 +44,8 @@ export class HabitatService {
     this.habitatInfos.push(gutterHabitat);
 
     const tireHabitat = getEmptyHabitat();
-    tireHabitat.topPositionRatio = 0.487;
-    tireHabitat.leftPositionRatio = 0.851;
+    tireHabitat.topPositionRatio = 0.480;
+    tireHabitat.leftPositionRatio = 0.844;
     tireHabitat.heightRatio = 0.1;
     tireHabitat.widthRatio = 0.074;
     tireHabitat.image = '../assets/images/tire.jpg';
